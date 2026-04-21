@@ -1,191 +1,499 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Younes Humadi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Younes Humadi | Praktik & Studiejob</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f7fb;
-    color: #1f2937;
-}
+        :root {
+            --bg: #f3f7fb;
+            --card: #ffffff;
+            --text: #1f2937;
+            --muted: #5b6472;
+            --primary: #163d7a;
+            --primary-soft: #eaf1ff;
+            --accent: #2f6fed;
+            --border: #e6ebf2;
+            --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+        }
 
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.hero {
-    background: linear-gradient(135deg, #1e3a8a, #2563eb);
-    color: white;
-    border-radius: 20px;
-    padding: 40px;
-    text-align: center;
-}
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(180deg, #eef3f9 0%, #f8fbff 100%);
+            color: var(--text);
+            line-height: 1.65;
+        }
 
-.hero img {
-    width: 140px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-}
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 28px 20px 60px;
+        }
 
-h1 {
-    margin: 10px 0;
-}
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #163d7a 55%, #2457a7 100%);
+            color: white;
+            border-radius: 28px;
+            padding: 42px;
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 34px;
+            align-items: center;
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
+        }
 
-.hero p {
-    max-width: 600px;
-    margin: 10px auto;
-}
+        .hero-image img {
+            width: 100%;
+            max-width: 220px;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 24px;
+            border: 4px solid rgba(255,255,255,0.18);
+            display: block;
+        }
 
-.buttons a {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 18px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-}
+        .eyebrow {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 0.3px;
+            background: rgba(255,255,255,0.12);
+            padding: 8px 14px;
+            border-radius: 999px;
+            margin-bottom: 16px;
+        }
 
-.btn-primary {
-    background: white;
-    color: #1e3a8a;
-}
+        h1 {
+            margin: 0 0 10px;
+            font-size: 46px;
+            line-height: 1.08;
+        }
 
-.btn-secondary {
-    border: 1px solid white;
-    color: white;
-}
+        .hero-subtitle {
+            margin: 0 0 16px;
+            font-size: 21px;
+            color: #dbe7ff;
+        }
 
-.section {
-    background: white;
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 15px;
-}
+        .hero-text p {
+            margin: 0 0 14px;
+            font-size: 17px;
+            color: #eef4ff;
+            max-width: 760px;
+        }
 
-h2 {
-    margin-top: 0;
-}
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 22px;
+        }
 
-.skills span {
-    display: inline-block;
-    background: #e0e7ff;
-    padding: 8px 12px;
-    margin: 5px;
-    border-radius: 20px;
-    font-size: 14px;
-}
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 14px;
+            font-weight: bold;
+            transition: 0.2s ease;
+        }
 
-.project {
-    border-left: 4px solid #2563eb;
-    padding-left: 15px;
-    margin-top: 10px;
-}
+        .button-primary {
+            background: white;
+            color: #10203d;
+        }
 
-.footer {
-    text-align: center;
-    margin-top: 30px;
-    color: #6b7280;
-}
-</style>
+        .button-primary:hover {
+            background: #edf3ff;
+        }
+
+        .button-secondary {
+            color: white;
+            border: 1px solid rgba(255,255,255,0.32);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .button-secondary:hover {
+            background: rgba(255,255,255,0.12);
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 22px;
+            margin-top: 24px;
+        }
+
+        .section {
+            background: var(--card);
+            border-radius: 22px;
+            padding: 28px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(230, 235, 242, 0.75);
+        }
+
+        h2 {
+            margin: 0 0 16px;
+            font-size: 25px;
+            color: #0f172a;
+        }
+
+        h3 {
+            margin: 0 0 6px;
+            font-size: 18px;
+            color: #101827;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        .highlight {
+            background: var(--primary-soft);
+            border-left: 4px solid var(--accent);
+            border-radius: 14px;
+            padding: 16px 18px;
+            margin-top: 18px;
+            color: #19315f;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .stat-box {
+            background: #f8fbff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 16px;
+        }
+
+        .stat-title {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        .stat-value {
+            font-size: 17px;
+            font-weight: bold;
+            color: #10203d;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1.08fr 0.92fr;
+            gap: 22px;
+            margin-top: 22px;
+        }
+
+        .timeline-item {
+            padding-bottom: 18px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .timeline-meta {
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .pill {
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: #eef4ff;
+            color: #214b95;
+            font-size: 14px;
+            font-weight: bold;
+            border: 1px solid #d7e4ff;
+        }
+
+        .bullet-list {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .bullet-list li {
+            margin-bottom: 10px;
+            color: var(--muted);
+        }
+
+        .contact-card p,
+        .section p {
+            margin-top: 0;
+        }
+
+        .contact-card a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            color: #7a8391;
+            font-size: 14px;
+            margin-top: 26px;
+        }
+
+        @media (max-width: 920px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: left;
+                padding: 30px;
+            }
+
+            .hero-image img {
+                max-width: 170px;
+            }
+
+            .intro-grid,
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .container {
+                padding: 16px 14px 40px;
+            }
+
+            .hero,
+            .section {
+                padding: 22px;
+                border-radius: 18px;
+            }
+
+            h1 {
+                font-size: 31px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container">
 
-<div class="container">
+        <section class="hero">
+            <div class="hero-image">
+                <img src="profil.jpg" alt="Younes Humadi">
+            </div>
 
-<div class="hero">
-    <img src="profil.jpg">
+            <div class="hero-text">
+                <div class="eyebrow">DTU · Computer Engineering · 6. semester</div>
+                <h1>Younes Humadi</h1>
+                <p class="hero-subtitle">Diplomingeniørstuderende med interesse for software, AI og tekniske løsninger i praksis</p>
+                <p>
+                    Jeg er studerende i Computer Engineering på DTU og søger primært et praktikforløb på cirka 20 uger med opstart i august 2026. Jeg er især motiveret af softwareudvikling, systemintegration, embedded systems, digitalisering og AI-relaterede løsninger, hvor teknologi bruges til at skabe værdi i virkelige systemer.
+                </p>
+                <p>
+                    Samtidig er jeg også åben for en stilling som studentermedhjælper ved siden af studiet, gerne omkring 15–20 timer om ugen, hvis der er en relevant mulighed for at bidrage og udvikle mig fagligt.
+                </p>
 
-    <h1>Younes Humadi</h1>
+                <div class="hero-buttons">
+                    <a class="button button-primary" href="mailto:youneshumadi@gmail.com">Kontakt mig</a>
+                    <a class="button button-secondary" href="https://www.linkedin.com/in/younes-humadi-98665b225/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </section>
 
-    <p>
-        Computer Engineering studerende på DTU med interesse for softwareudvikling,
-        systemer og AI. Jeg søger primært praktik fra august 2026 (20 uger),
-        men er også åben for studiejob (15–20 timer).
-    </p>
+        <div class="intro-grid">
+            <section class="section">
+                <h2>Om mig</h2>
+                <p class="muted">
+                    Jeg er ambitiøs, analytisk og trives bedst i miljøer, hvor teknik, struktur og samarbejde går hånd i hånd. Det motiverer mig at arbejde med løsninger, hvor der ikke kun skal skrives kode, men også tænkes i systemer, brugere og stabil drift.
+                </p>
+                <p class="muted">
+                    Gennem min uddannelse har jeg opbygget en solid teknisk grundforståelse inden for softwareudvikling, digitalt design, test, fejlfinding og systemintegration. Jeg interesserer mig også for AI og intelligente systemer, særligt hvor software og data kan bruges til at udvikle løsninger, som er både praktiske og værdiskabende.
+                </p>
+                <p class="muted">
+                    Ved siden af studiet har jeg arbejdet med teknisk support og undervisning, hvilket har styrket min evne til at forklare tekniske problemstillinger klart, arbejde struktureret og bevare overblik i situationer, hvor der skal handles hurtigt.
+                </p>
 
-    <div class="buttons">
-        <a class="btn-primary" href="mailto:youneshumadi@gmail.com">Kontakt</a>
-        <a class="btn-primary" href="Younes_Humadi_CV.pdf" target="_blank">Download CV</a>
-        <a class="btn-secondary" href="https://www.linkedin.com/in/younes-humadi-98665b225/" target="_blank">LinkedIn</a>
+                <div class="highlight">
+                    <strong>Jeg søger:</strong><br>
+                    Praktik inden for software, IT, AI, digitalisering eller systemintegration — og er også åben for studiejob eller studentermedhjælperroller på 15–20 timer om ugen.
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Profil i korte træk</h2>
+
+                <div class="stats">
+                    <div class="stat-box">
+                        <div class="stat-title">Studie</div>
+                        <div class="stat-value">Computer Engineering, DTU</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-title">Semester</div>
+                        <div class="stat-value">6. semester</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-title">Søger primært</div>
+                        <div class="stat-value">Praktik fra august 2026</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-title">Også åben for</div>
+                        <div class="stat-value">Studentermedhjælper 15–20 timer</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 22px;">
+                    <h3>Det jeg kan bidrage med</h3>
+                    <ul class="bullet-list">
+                        <li>En struktureret og analytisk tilgang til tekniske problemstillinger.</li>
+                        <li>Grundig forståelse for software, systemer og integration i praksis.</li>
+                        <li>Evnen til hurtigt at sætte mig ind i nye teknologier og arbejdsgange.</li>
+                        <li>God teknisk formidling og samarbejde på tværs af opgaver og mennesker.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <div class="main-grid">
+            <div>
+                <section class="section">
+                    <h2>Erfaring</h2>
+
+                    <div class="timeline-item">
+                        <h3>Teknisk medarbejder · VR Racing</h3>
+                        <div class="timeline-meta">September 2024 – nu</div>
+                        <p class="muted">
+                            Arbejder med drift, opsætning og vedligeholdelse af teknisk udstyr samt fejlfinding på både hardware- og softwarekomponenter under events. Rollen har givet mig praktisk erfaring med at bevare overblik, handle hurtigt og finde stabile løsninger i situationer, hvor teknikken skal fungere.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>Teaching Assistant · Danmarks Tekniske Universitet</h3>
+                        <div class="timeline-meta">Februar 2024 – december 2024</div>
+                        <p class="muted">
+                            Har vejledt studerende i programmering og projektarbejde og været med til at forklare tekniske koncepter på en enkel og struktureret måde. Det har styrket mine kompetencer inden for teknisk formidling, samarbejde og faglig støtte i praksis.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="section" style="margin-top: 22px;">
+                    <h2>Faglige interesser</h2>
+                    <p class="muted">
+                        Jeg er særligt interesseret i roller, hvor jeg kan arbejde med softwareudvikling og samtidig få indsigt i, hvordan løsninger fungerer i en større sammenhæng. Det kan være inden for klassisk software, interne IT-løsninger, automatisering, AI-udvikling eller tekniske produkter, hvor udvikling, test og implementering hænger tæt sammen.
+                    </p>
+                    <p class="muted">
+                        Det, der tiltaler mig mest, er at være i et miljø, hvor man både tænker teknisk og praktisk — og hvor der er plads til at lære, tage ansvar og bidrage med konkrete løsninger.
+                    </p>
+                </section>
+
+                <section class="section" style="margin-top: 22px;">
+                    <h2>Hvad jeg søger</h2>
+                    <ul class="bullet-list">
+                        <li>Praktikforløb på cirka 20 uger med opstart i august 2026.</li>
+                        <li>Mulighed for at arbejde med software, IT, AI, digitalisering eller systemintegration.</li>
+                        <li>Et fagligt miljø med plads til læring, ansvar og tæt samarbejde.</li>
+                        <li>Alternativt eller sideløbende en studentermedhjælperrolle på 15–20 timer om ugen.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <div>
+                <section class="section">
+                    <h2>Uddannelse</h2>
+                    <h3>Danmarks Tekniske Universitet</h3>
+                    <p class="muted">
+                        Diplomingeniør i Computer Engineering<br>
+                        August 2023 – nu
+                    </p>
+                    <p class="muted">
+                        Fokus på softwareudvikling, embedded systems, systemintegration og digitalt design.
+                    </p>
+
+                    <h3 style="margin-top: 20px;">Ørestad Gymnasium</h3>
+                    <p class="muted">
+                        STX · 2020 – 2023<br>
+                        Matematik A, Engelsk A, Fysik B, Kemi B
+                    </p>
+                </section>
+
+                <section class="section" style="margin-top: 22px;">
+                    <h2>Tekniske kompetencer</h2>
+                    <div class="pill-list">
+                        <span class="pill">Python</span>
+                        <span class="pill">Java</span>
+                        <span class="pill">C</span>
+                        <span class="pill">Assembly</span>
+                        <span class="pill">SQL</span>
+                        <span class="pill">Git</span>
+                        <span class="pill">Visual Studio Code</span>
+                        <span class="pill">Vivado</span>
+                        <span class="pill">Systemintegration</span>
+                        <span class="pill">Test</span>
+                        <span class="pill">Fejlfinding</span>
+                        <span class="pill">Softwareudvikling</span>
+                        <span class="pill">Embedded systems</span>
+                        <span class="pill">AI-interesse</span>
+                    </div>
+                </section>
+
+                <section class="section" style="margin-top: 22px;">
+                    <h2>Personlige styrker</h2>
+                    <ul class="bullet-list">
+                        <li>Analytisk og struktureret i min tilgang til problemløsning.</li>
+                        <li>Hurtig til at sætte mig ind i nye teknologier og systemer.</li>
+                        <li>Stærk teknisk formidling og god samarbejdsevne.</li>
+                        <li>Ansvarsbevidst, nysgerrig og motiveret for at lære mere.</li>
+                    </ul>
+                </section>
+
+                <section class="section contact-card" style="margin-top: 22px;">
+                    <h2>Kontakt</h2>
+                    <p class="muted"><strong>Email:</strong> <a href="mailto:youneshumadi@gmail.com">youneshumadi@gmail.com</a></p>
+                    <p class="muted"><strong>Telefon:</strong> 91 61 00 61</p>
+                    <p class="muted"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/younes-humadi-98665b225/" target="_blank">linkedin.com/in/younes-humadi-98665b225</a></p>
+                </section>
+            </div>
+        </div>
+
+        <div class="footer">
+            Tak fordi du kigger forbi.
+        </div>
     </div>
-</div>
-
-<div class="section">
-    <h2>Om mig</h2>
-    <p>
-        Jeg arbejder bedst, når jeg får lov til at kombinere teknisk forståelse med struktur og problemløsning.
-        Jeg er typen, der gerne vil forstå hvordan ting fungerer i praksis – ikke kun skrive kode, men også
-        få systemer til at hænge sammen.
-    </p>
-
-    <p>
-        Jeg interesserer mig især for softwareudvikling og AI, hvor data og teknologi bruges til at skabe
-        løsninger, der faktisk bliver brugt. Jeg lærer hurtigt nye teknologier og trives i miljøer,
-        hvor der er tempo og ansvar.
-    </p>
-</div>
-
-<div class="section">
-    <h2>Udvalgt projekt</h2>
-
-    <div class="project">
-        <b>Robotprojekt (YOLOv8 & EV3)</b>
-        <p>
-            Udviklede en robot, der kan detektere bolde ved hjælp af computer vision og navigere for at score mål.
-            Projektet kombinerede AI (YOLOv8), software og hardware, og gav praktisk erfaring med integration
-            mellem forskellige systemer.
-        </p>
-    </div>
-</div>
-
-<div class="section">
-    <h2>Kompetencer</h2>
-    <div class="skills">
-        <span>Python</span>
-        <span>Java</span>
-        <span>C</span>
-        <span>Git</span>
-        <span>SQL</span>
-        <span>AI / Computer Vision</span>
-        <span>Systemintegration</span>
-        <span>Fejlfinding</span>
-    </div>
-</div>
-
-<div class="section">
-    <h2>Erfaring</h2>
-    <p><b>Teaching Assistant – DTU</b><br>
-    Vejledning i programmering og teknisk formidling.</p>
-
-    <p><b>Teknisk medarbejder – VR Racing</b><br>
-    Arbejde med hardware, software og fejlfinding under events.</p>
-</div>
-
-<div class="section">
-    <h2>Hvad jeg søger</h2>
-    <p>
-        Jeg søger et praktikforløb inden for software, IT eller AI, hvor jeg kan arbejde med rigtige
-        problemstillinger og udvikle mine tekniske kompetencer i praksis.
-    </p>
-
-    <p>
-        Jeg er også interesseret i studiejob ved siden af studiet (15–20 timer),
-        hvis der er mulighed for at arbejde med relevante teknologier.
-    </p>
-</div>
-
-<div class="footer">
-    Tak fordi du kigger forbi
-</div>
-
-</div>
-
 </body>
 </html>
